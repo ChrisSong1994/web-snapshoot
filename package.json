@@ -1,0 +1,35 @@
+{
+  "name": "@fett/web-snapshot",
+  "version": "0.0.1",
+  "description": "基于localstorage  的 web 快照方案",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "dev": "rimraf lib &&  rimraf tsconfig.tsbuildinfo && tsc -w",
+    "build": "rimraf lib &&  rimraf tsconfig.tsbuildinfo && tsc",
+    "example": "npm run build && http-server"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,html,css,json}": [
+      "npx prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisSong1994/web-snapshoot.git"
+  },
+  "keywords": [],
+  "author": "chrissong <chrissong1994@163.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.2",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

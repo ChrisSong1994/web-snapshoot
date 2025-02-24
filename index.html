@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>快照代码示例</title>
+    <script>
+      window.exports = {};
+    </script>
+    <script defer src="./lib/index.js"></script>
+    <script>
+      window.onload = () => {
+        const snapshot = new Snapshot({
+          id: "TMALLFANG",
+          expired: 1000 * 5, // 5s 有效期测试
+        });
+        setTimeout(() => {
+          document.getElementById("title").innerText =
+            `Hello World ${Math.random() * 10}`;
+          snapshot.hidden();
+          snapshot.update();
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="title">Hello World</h1>
+  </body>
+</html>
